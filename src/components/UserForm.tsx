@@ -56,8 +56,10 @@ export default function UserForm() {
           values={formData}
         />
       );
-    // case 3:
-    //   return <Confirm nextStep={nextStep} prevStep={prevStep} handleChange={handleFieldsChange} values={formData}/>;
+    case 3:
+      return (
+        <Confirm nextStep={nextStep} prevStep={prevStep} values={formData} />
+      );
     // case 4:
     //   return <Success  prevStep={prevStep} handleChange={handleFieldsChange} values={formData}/>;
     default:

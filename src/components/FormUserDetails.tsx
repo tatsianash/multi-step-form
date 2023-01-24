@@ -24,7 +24,6 @@ export default function FormUserDetails({
     root: {
       display: 'flex',
       flexDirection: 'column',
-
       alignItems: 'center',
       justifyContent: 'center',
     },
