@@ -15,7 +15,14 @@ export interface FormDataType {
 
 export default function UserForm() {
   const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState<FormDataType>({});
+  const [formData, setFormData] = useState<FormDataType>({
+    firstName: '',
+    lastName: '',
+    email: '',
+    occupation: '',
+    city: '',
+    bio: '',
+  });
 
   const nextStep = () => {
     setStep((st) => st + 1);
