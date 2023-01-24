@@ -60,8 +60,8 @@ export default function UserForm() {
       return (
         <Confirm nextStep={nextStep} prevStep={prevStep} values={formData} />
       );
-    // case 4:
-    //   return <Success  prevStep={prevStep} handleChange={handleFieldsChange} values={formData}/>;
+    case 4:
+      return <Success />;
     default:
       return <div>Error happend..</div>;
   }
