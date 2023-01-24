@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import { styles } from './stepStyles';
+import { labelMap } from '../labelMap';
 
 interface IProps {
   values: FormDataType;
@@ -31,27 +32,27 @@ export default function FormPersonalDetails({
       <AppBar style={styles.appbar}>Enter User Details</AppBar>
       <TextField
         style={styles.textField}
-        label="Occupation"
+        label={labelMap.occupation}
         onChange={(e) => handleChange('occupation', e.target.value)}
         value={values?.occupation}
       />
 
       <TextField
         style={styles.textField}
-        label="City"
+        label={labelMap.city}
         onChange={(e) => handleChange('city', e.target.value)}
         value={values?.city}
       />
 
       <TextField
         style={styles.textField}
-        label="State"
+        label={labelMap.state}
         onChange={(e) => handleChange('state', e.target.value)}
         value={values?.state}
       />
       <TextField
         style={styles.textField}
-        label="Bio"
+        label={labelMap.bio}
         onChange={(e) => handleChange('bio', e.target.value)}
         value={values?.bio}
       />
