@@ -10,6 +10,7 @@ interface IProps {
   //   prevStep: () => void;
   handleChange: (field: string, value: string) => void;
 }
+
 export default function FormUserDetails({
   nextStep,
   handleChange,

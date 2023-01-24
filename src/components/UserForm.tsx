@@ -48,8 +48,14 @@ export default function UserForm() {
         />
       );
     case 2:
-      return <div>nextpage</div>;
-    //   <FormPersonalDetails nextStep={nextStep} prevStep={prevStep} handleChange={handleFieldsChange} values={formData}/>;
+      return (
+        <FormPersonalDetails
+          nextStep={nextStep}
+          prevStep={prevStep}
+          handleChange={handleFieldsChange}
+          values={formData}
+        />
+      );
     // case 3:
     //   return <Confirm nextStep={nextStep} prevStep={prevStep} handleChange={handleFieldsChange} values={formData}/>;
     // case 4:
