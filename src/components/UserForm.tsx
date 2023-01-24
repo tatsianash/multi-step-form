@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import Confirm from './Confirm';
-import FormPersonalDetails from './FormPersonalDetails';
-import FormUserDetails from './FormUserDetails';
-import Success from './Success';
+import Confirm from './steps/Confirm';
+import FormPersonalDetails from './steps/FormPersonalDetails';
+import FormUserDetails from './steps/FormUserDetails';
+import Success from './steps/Success';
 
 export interface FormDataType {
-  firstName?: string | undefined;
-  lastName?: string | undefined;
-  email?: string | undefined;
-  occupation?: string | undefined;
-  city?: string | undefined;
-  state?: string | undefined;
-  bio?: string | undefined;
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  occupation?: string;
+  city?: string;
+  state?: string;
+  bio?: string;
 }
 
 export default function UserForm() {
