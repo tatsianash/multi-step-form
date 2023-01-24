@@ -1,3 +1,5 @@
+type labelMap = { [propKey: string]: string };
+
 export const labelMap = {
   firstName: 'First Name',
   lastName: 'Last Name',
@@ -6,4 +8,4 @@ export const labelMap = {
   city: 'City',
   state: 'State',
   bio: 'Bio',
-};
+} as labelMap;

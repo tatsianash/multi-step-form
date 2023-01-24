@@ -1,8 +1,9 @@
 import React from 'react';
-import { FormDataType } from './UserForm';
+import { FormDataType } from '../UserForm';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
+import { styles } from './stepStyles';
 
 interface IProps {
   values: FormDataType;
@@ -19,19 +20,6 @@ export default function FormUserDetails({
   const toNextStep = (e: React.FormEvent) => {
     e.preventDefault();
     nextStep();
-  };
-  const styles = {
-    root: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    appbar: {
-      alignItems: 'center',
-      padding: '10px 0',
-    },
-    textField: { marginTop: '50px' },
   };
 
   return (
