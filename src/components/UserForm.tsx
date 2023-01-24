@@ -10,6 +10,7 @@ export interface FormDataType {
   email?: string | undefined;
   occupation?: string | undefined;
   city?: string | undefined;
+  state?: string | undefined;
   bio?: string | undefined;
 }
 
@@ -21,6 +22,7 @@ export default function UserForm() {
     email: '',
     occupation: '',
     city: '',
+    state: '',
     bio: '',
   });
 
@@ -45,8 +47,9 @@ export default function UserForm() {
           values={formData}
         />
       );
-    // case 2:
-    //   return <FormPersonalDetails nextStep={nextStep} prevStep={prevStep} handleChange={handleFieldsChange} values={formData}/>;
+    case 2:
+      return <div>nextpage</div>;
+    //   <FormPersonalDetails nextStep={nextStep} prevStep={prevStep} handleChange={handleFieldsChange} values={formData}/>;
     // case 3:
     //   return <Confirm nextStep={nextStep} prevStep={prevStep} handleChange={handleFieldsChange} values={formData}/>;
     // case 4:

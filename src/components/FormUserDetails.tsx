@@ -22,6 +22,8 @@ export default function FormUserDetails({
   const styles = {
     root: {
       display: 'flex',
+      flexDirection: 'column',
+
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -33,7 +35,7 @@ export default function FormUserDetails({
   };
 
   return (
-    <div style={styles.root}>
+    <div style={styles.root as React.CSSProperties}>
       <AppBar style={styles.appbar}>Enter User Details</AppBar>
       <TextField
         style={styles.textField}
@@ -41,6 +43,22 @@ export default function FormUserDetails({
         onChange={(e) => handleChange('firstName', e.target.value)}
         value={values?.firstName}
       />
+
+      <TextField
+        style={styles.textField}
+        label="Last Name"
+        onChange={(e) => handleChange('lastName', e.target.value)}
+        value={values?.lastName}
+      />
+
+      <TextField
+        style={styles.textField}
+        label="Email"
+        onChange={(e) => handleChange('email', e.target.value)}
+        value={values?.email}
+      />
+      <br></br>
+      <Button onClick={toNextStep}>Continue</Button>
     </div>
   );
 }
