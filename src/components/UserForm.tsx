@@ -3,20 +3,12 @@ import Confirm from './steps/Confirm';
 import FormPersonalDetails from './steps/FormPersonalDetails';
 import FormUserDetails from './steps/FormUserDetails';
 import Success from './steps/Success';
-
-export interface FormDataType {
-  firstName?: string;
-  lastName?: string;
-  email?: string;
-  occupation?: string;
-  city?: string;
-  state?: string;
-  bio?: string;
-}
+import useForm from '../Hooks/useForm';
 
 export default function UserForm() {
   const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState<FormDataType>({
+
+  const initialValues = {
     firstName: '',
     lastName: '',
     email: '',
@@ -24,7 +16,12 @@ export default function UserForm() {
     city: '',
     state: '',
     bio: '',
-  });
+  };
+  const {
+    values: formData,
+    handleFieldsChange,
+    errors,
+  } = useForm(initialValues);
 
   const nextStep = () => {
     setStep((st) => st + 1);
@@ -34,9 +31,7 @@ export default function UserForm() {
     setStep((st) => st - 1);
   };
 
-  const handleFieldsChange = (field: string, value: string) => {
-    setFormData({ ...formData, [field]: value });
-  };
+  console.log('errors', errors);
 
   switch (step) {
     case 1:
@@ -54,6 +49,7 @@ export default function UserForm() {
           prevStep={prevStep}
           handleChange={handleFieldsChange}
           values={formData}
+          errors={errors}
         />
       );
     case 3:
