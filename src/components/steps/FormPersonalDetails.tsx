@@ -59,6 +59,8 @@ export default function FormPersonalDetails({
         label={labelMap.bio}
         onChange={(e) => handleChange('bio', e.target.value)}
         value={values?.bio}
+        multiline
+        minRows={2}
       />
       <br></br>
       <div>
