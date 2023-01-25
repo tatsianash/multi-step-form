@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormDataType } from '../UserForm';
+import { FormDataType } from '../../Hooks/useForm';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
@@ -11,9 +11,11 @@ interface IProps {
   nextStep: () => void;
   prevStep: () => void;
   handleChange: (field: string, value: string) => void;
+  errors: { [key: string]: string };
 }
 export default function FormPersonalDetails({
   values,
+  errors,
   nextStep,
   prevStep,
   handleChange,
@@ -49,6 +51,8 @@ export default function FormPersonalDetails({
         label={labelMap.state}
         onChange={(e) => handleChange('state', e.target.value)}
         value={values?.state}
+        error={'state' in errors}
+        helperText={errors?.state}
       />
       <TextField
         style={styles.textField}
@@ -59,7 +63,9 @@ export default function FormPersonalDetails({
       <br></br>
       <div>
         <Button onClick={toPrevStep}>Back</Button>
-        <Button onClick={toNextStep}>Continue</Button>
+        <Button disabled={'state' in errors} onClick={toNextStep}>
+          Continue
+        </Button>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormDataType } from '../UserForm';
+import { FormDataType } from '../../Hooks/useForm';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
